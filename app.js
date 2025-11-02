@@ -1,5 +1,7 @@
 const express = require("express");
+const path = require("path");
 const app = express();
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(requestLoggerMiddleware);
 
@@ -34,6 +36,11 @@ app.get("/validate-number", (req, res) => {
   } catch(err) {
     res.status(500).send(err)
   }
+});
+
+app.get("/", (req, res) => {
+  // Your code goes here.
+  res.sendFile(path.join(__dirname, "public", "index.html"))
 });
 
 app.use((req,res) => {
