@@ -1,6 +1,14 @@
 const express = require("express");
 const app = express();
-// Your code goes here.
+
+app.use(requestLoggerMiddleware);
+
+function requestLoggerMiddleware(req, res, next) {
+  // Your code goes here.
+  console.log(`${new Date().toISOString()} - ${req.method} request received`)
+  next();
+} 
+//Your code goes here.
 
 const port = 3000;
 app.listen(port, () => {
