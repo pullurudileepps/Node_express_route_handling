@@ -13,3 +13,8 @@ Create a middleware function that takes req, res, and next as parameters. Inside
 Call the next() function to pass control to the next middleware function in the stack. Use app.use() to apply the middleware function to all incoming requests.
 Write your code in src/api.js
 ********************************
+Q3:Create an Express route that checks if the request parameter "number" is a positive integer.
+If the "number" parameter is not a positive integer, the route should send "Invalid positive integer" with status code 400. 
+If the validation is successful, the response should include a success message saying "Success!". 
+Write a middleware function to validate the "number" parameter.
+Write your code in src/api.js
